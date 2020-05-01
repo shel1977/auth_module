@@ -1,0 +1,10 @@
+.simpleLink {
+    color: #607D8B;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+}

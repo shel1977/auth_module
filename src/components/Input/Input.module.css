@@ -1,0 +1,12 @@
+.simplePlaceholder {
+    padding: 0;
+    overflow: auto;
+    border: 0;
+    color: #607D8B;
+    font-size: 12px;
+    width: 500px;
+    resize: none;
+    text-indent: 10px;
+    outline:  #607D8B 2px solid;
+    margin: 10px;
+}

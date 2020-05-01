@@ -1,0 +1,12 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.example {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #c1c1c1;
+}
