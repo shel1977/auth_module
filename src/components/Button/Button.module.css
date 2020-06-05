@@ -7,12 +7,12 @@
     font-size: 15px;
     font-weight: bold;
     font-style: normal;
-    height: 59px;
-    line-height: 59px;
-    width: 159px;
+    height: 60px;
+    line-height: 60px;
+    width: 160px;
     text-decoration: none;
     text-align: center;
-    margin: 10px;
+    margin: 10px 20px 30px;
     cursor: pointer;
 }
 .simpleButton:hover {
@@ -21,4 +21,21 @@
 .simpleButton:active {
     position: relative;
     top: 1px;
+}
+
+.btnDisabled {
+    background-color: #6f6f6f;
+    text-indent: 0;
+    border: 0;
+    display: inline-block;
+    color: #989898;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    height: 60px;
+    line-height: 60px;
+    width: 160px;
+    text-decoration: none;
+    text-align: center;
+    margin: 10px 0 30px;
 }

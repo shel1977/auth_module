@@ -1,66 +1,56 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
 import './App.css';
-import Button from "./components/Button/Button";
-import Input from "./components/Input/Input";
-import LinkComponent from "./components/NavLink/NavLink";
-import LoginPage from "./components/LoginPage/LoginPage";
-import ProfilePage from "./components/ProfilePage/ProfilePage";
-import RegisterPage from "./components/RegisterPage/RegisterPage";
-import RecoverPassPage from "./components/RecoverPassPage/RecoverPassPage";
-import NewPassPage from "./components/NewPassPage/NewPassPage";
+import ProjLink from "./components/NavLink/NavLink";
+import {Switch, Route, HashRouter, Redirect} from 'react-router-dom';
+import LoginContainer from "./containers/Login/LoginContainer";
+import Profile from "./containers/Profile/Profile";
+import RegisterContainer from "./containers/Register/RegisterContainer";
+import {Provider} from 'react-redux';
+import store from './bll/store';
+import ProfileContainer from "./containers/Profile/ProfileContainer";
+import PasswordRecoveryContainer from "./containers/PasswordRecovery/PasswordRecoveryContainer";
+import NewPasswordContainer from "./containers/NewPassword/NewPasswordContainer";
 
-function App() {
+
+const App: React.FC = () => {
+
     return (
-        <div className="App">
-            <header className="App-header">
-                <nav>
-                    <LinkComponent to={'/login'} title={'Login'}/>
-                    <LinkComponent to={'/profile'} title={'Profile'}/>
-                    <LinkComponent to={'/register'} title={'Registration'}/>
-                    <LinkComponent to={'/newpass'} title={'New password'}/>
-                    <LinkComponent to={'/recoverpass'} title={'Recover password'}/>
-                </nav>
-            </header>
-            <main>
-                <Switch>
-                    <Route path='/login'>
-                        <LoginPage/>
-                    </Route>
-                    <Route path='/profile'>
-                        <ProfilePage/>
-                    </Route>
-                    <Route path='/register'>
-                        <RegisterPage/>
-                    </Route>
-                    <Route path='/register'>
-                        <RegisterPage/>
-                    </Route>
-                    <Route path='/newpass'>
-                        <NewPassPage/>
-                    </Route>
-                    <Route path='/recoverpass'>
-                        <RecoverPassPage/>
-                    </Route>
-                </Switch>
-
-                <div className='example'>
-                    <div>
-                        <h2>examples</h2>
+        <HashRouter>
+            <Provider store={store}>
+                <div className="App">
+                    <div className="navigation">
+                        <ProjLink to={'/login'} name={'Login'}/>
+                        <ProjLink to={'/newpassword'} name={'New Password'}/>
+                        <ProjLink to={'/passwordrecovery'} name={'Recovery Password'}/>
+                        <ProjLink to={'/profile'} name={'Profile'}/>
+                        <ProjLink to={'/register'} name={'Register'}/>
                     </div>
-                    <div>
-                        <Button title={'simple button'}/>
-                    </div>
-                    <div>
-                        <Input placeholder={'write here'}/>
+                    <div className="main">
+                        <Switch>
+                            <Route path='/login'>
+                                <LoginContainer/>
+                            </Route>
+                            <Route path='/newpassword'>
+                                <NewPasswordContainer/>
+                            </Route>
+                            <Route path='/passwordrecovery'>
+                                <PasswordRecoveryContainer/>
+                            </Route>
+                            <Route path='/profile'>
+                                <ProfileContainer/>
+                            </Route>
+                            <Route path='/register'>
+                                <RegisterContainer/>
+                            </Route>
+                        </Switch>
                     </div>
                 </div>
-            </main>
-            <footer>
-
-            </footer>
-        </div>
+            </Provider>
+        </HashRouter>
     );
-}
+};
+
 
 export default App;
+
+

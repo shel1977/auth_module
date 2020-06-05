@@ -1,14 +1,14 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 import style from './NavLink.module.css'
-import {NavLink} from 'react-router-dom';
 
-type LinkComponentProps = {
-    title: string,
+type ProjLinkProps = {
     to: string
-}
-
-const LinkComponent = (props: LinkComponentProps) => {
-    return <NavLink to={props.to} className={style.simpleLink}>{props.title}</NavLink>
+    name: string
 };
 
-export default LinkComponent;
+const ProjLink = (props: ProjLinkProps) => {
+    return <NavLink to={props.to} className={style.simpleLink}> {props.name}</NavLink>
+};
+
+export default ProjLink;

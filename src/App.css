@@ -1,12 +1,25 @@
 .App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.example {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #c1c1c1;
+.form {
+    width: 500px;
+    min-height: auto;
+    background-color: #c1c1c1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding-bottom: 20px;
+}
+.form div {
+    text-align: center;
+    color: #607D8B;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
 }

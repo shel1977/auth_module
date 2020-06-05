@@ -1,22 +1,24 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
 import thunkMiddleware from 'redux-thunk';
-import loginPageReducer from "./redusers/loginPageReducer";
-import newPasswordPageReducer from "./redusers/newPasswordPageReducer";
-import recoverPassPageReducer from "./redusers/recoverPassPageReducer";
-import profileReducer from "./redusers/profileReducer";
-import registerReducer from "./redusers/registerReducer";
-
+import loginReducer from "./reducers/loginReducer";
+import allFormReducer from "./reducers/formReducer";
+import newPasswordReducer from "./reducers/newPasswordReducer";
+import passwordRecoveryReducer from "./reducers/passwordRecoveryReducer";
+import profileReducer from "./reducers/profileReducer";
+import registerReducer from "./reducers/registerReducer";
 
 
 const rootReducer = combineReducers({
-    login: loginPageReducer,
-    newPassword: newPasswordPageReducer,
-    passwordRecover: recoverPassPageReducer,
-    profile: profileReducer,
+    login: loginReducer,
+    passwordRecovery: passwordRecoveryReducer,
+    allForm: allFormReducer,
+  newPassword: newPasswordReducer,
+        profile: profileReducer,
     register: registerReducer
 });
 
+type RootReducerType = typeof rootReducer
+export type AppStateType = ReturnType<RootReducerType>
 
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
-
 export default store;

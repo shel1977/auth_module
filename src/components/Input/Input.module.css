@@ -4,9 +4,12 @@
     border: 0;
     color: #607D8B;
     font-size: 12px;
-    width: 500px;
+    width: 400px;
     resize: none;
     text-indent: 10px;
     outline:  #607D8B 2px solid;
     margin: 10px;
+}
+.checkbox {
+    color: red;
 }

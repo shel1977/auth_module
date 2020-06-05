@@ -2,12 +2,16 @@ import React from 'react';
 import style from './Button.module.css'
 
 type ButtonProps = {
-    title: string,
-
-}
+    name: string
+    onClick?: () => void
+    disabled?: boolean
+};
 
 const Button = (props: ButtonProps) => {
-return <button className={style.simpleButton}>{props.title}</button>
-};
+    const {name, onClick, disabled} = props;
+    return <button onClick={(event)=> { onClick?.() }}
+                   className={props.disabled ? style.btnDisabled: style.simpleButton}
+                   disabled={props.disabled}>{name}</button>
+}
 
 export default Button;
